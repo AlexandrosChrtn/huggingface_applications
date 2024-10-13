@@ -49,7 +49,9 @@ Ensure you have the following installed:
    ```
 
 ## Tools Overview
-    Change directory from terminal with:
+
+   Change directory from terminal with:
+   
    ```bash
    cd name_of_folder
    ```
