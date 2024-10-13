@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Transcription</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Record for 15 Seconds</h1>
+        <button id="record-button">Record</button>
+        <h2>Transcription:</h2>
+        <p id="transcription"></p>
+    </div>
+
+    <script>
+        $('#record-button').on('click', function() {
+            $(this).text('Recording...').attr('disabled', true);
+
+            $.get('/record', function(data) {
+                $('#transcription').text(data.transcription);
+                $('#record-button').text('Record for 15 seconds').attr('disabled', false);
+            }).fail(function() {
+                $('#transcription').text('Error recording audio.');
+                $('#record-button').text('Record for 15 seconds').attr('disabled', false);
+            });
+        });
+    </script>
+</body>
+</html>
