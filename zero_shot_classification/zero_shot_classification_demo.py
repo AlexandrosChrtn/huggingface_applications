@@ -1,5 +1,5 @@
 from transformers import pipeline
-classifier = pipeline('zero-shot-classification', model='roberta-large-mnli', device="mps")
+classifier = pipeline('zero-shot-classification', model='roberta-large-mnli')
 
 # See: https://huggingface.co/FacebookAI/roberta-large-mnli
 
