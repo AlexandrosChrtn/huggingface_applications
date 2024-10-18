@@ -8,3 +8,4 @@ torch==2.4.1
 transformers==4.45.1
 gradio==5.0.2
 accelerate==1.0.1
+datasets==3.0.1
